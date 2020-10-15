@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Exo+2', sans-serif;
+    font-size: 15px;
+}
+
+#home {
+    background-color: #1c0829;
+    background-image: linear-gradient(326deg, #37164d 0%, #12021a 74%);
+}
+
+
+
+/* ------------------------------------------------------------------
+HEADER 
+---------------------------------------------------------------------*/
+
+.header {
+    width: 100%;
+}
+
+.header img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(239, 237, 245);
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.644);
+    width: 50%;
+    max-width: 400px;
+    padding: 10px;
+}
+
+.header .dateHour {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    color:  rgb(239, 237, 245);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.header .dateHour .date-hour .date {
+    font-weight: 700;
+}
+
+
+
+
+
+
+/* ------------------------------------------------------------------
+TRANSITION 
+---------------------------------------------------------------------*/
+.fade * {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.fade.in * {
+    opacity: 1;
+}
+
+
+
+
+
+
+/* ------------------------------------------------------------------
+ACCEUIL 
+---------------------------------------------------------------------*/
+
+#acceuil.disable * {
+    display: none;
+}
+
+#acceuil {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.212) inset;
+
+    z-index: 1;
+}
+
+
+
+
+
+#acceuil #messageUser {
+    width: 100%;
+    text-align: center;
+    color: rgb(239, 237, 245);
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 0 20vh 0;
+
+}
+
+
+
+#createUserBtn {
+    background-color:  rgba(0, 0, 0, 0.431);
+    box-shadow: 0px 0px 15px rgb(161, 24, 138);
+    border: 1px solid white;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    padding: 30px;
+    font-size: 2rem;
+    transition: border-color 0.7s, border-radius 0.7s;
+}
+
+#createUserBtn:hover {
+    border-radius: 0;
+    cursor: pointer;
+    white-space: nowrap;
+    border-color: #000;
+    border-radius: 50px;
+    transition: border-color 0.7s, border-radius 0.7s;
+}
+
+#createUserBtn:focus {
+    outline: none;
+}
+
+#createUserBtn:active {
+    color: rgb(0, 55, 87);
+}
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------
+FORM CREATION UTILISATEUR 
+---------------------------------------------------------------------*/
+
+#form.disable * {
+    display: none;
+}
+
+#form {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 0;
+}
+
+#form form {
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0px 0px 10px rgb(161, 24, 138) inset,0px 0px 10px rgb(161, 24, 138);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 40%;
+    min-width: 250px;
+    max-width: 350px;
+    padding: 30px 40px;
+}
+
+#form label {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+#form #labelPrenom {
+    color: rgb(204, 117, 255);
+    text-decoration: underline;
+}
+
+#form #labelNom {
+    color: rgb(204, 117, 255);
+    text-decoration: underline;
+}
+
+#form ::placeholder{
+    color: rgb(192, 192, 192);
+    font-weight: 500;
+}
+
+#form input {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 3.5rem;
+    text-align: center;
+    margin: 10px 0 50px;
+    width: 100%;
+    color: rgb(0, 156, 130);
+    border-radius: 15px;
+}
+
+#form form #options {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#form #options button {
+    font-size: 1.5rem;
+    width: 45%;
+    padding: 10px 0;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border: none;
+    color: white;
+}
+
+#form #options #formValider {
+    background-color: #8700d4;
+}
+#form #options #formAnnuler {
+    background-color: #a70045;
+}
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------
+USER CONTAINER 
+---------------------------------------------------------------------*/
+
+#userContainer.disable * {
+    display: none;
+}
+
+#userContainer {
+    width: 70vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#userContainer .btnUser {
+    position: relative;
+    background-color: white;
+    font-size: 100%;
+    width: 23%;
+    max-width: 180px;
+    min-width: 100px;
+    height: 12vw;
+    max-height: 140px;
+    min-height: 90px;
+    margin: 7px 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#userContainer .btnUser.hover:hover {
+    transform: scale(1.1);
+}
+
+#userContainer .btnUser:focus {
+    outline: none;
+}
+
+.userSuppr {
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2px 5px 0 15px;
+    height: 30px;
+    line-height: 10px;
+    transition:  0.1s, scale 0.1s;
+}
+
+.userSuppr:hover {
+    transform: scale(2) translate(-5px, 5px);
+    color: red;
+    font-weight: 600;
+}
+
+.userSuppr:hover::after {
+    position: absolute;
+    top: -10px;
+    left: -17px;
+    content: "Supprimer";
+    font-family: sans-serif;
+    font-size: 0.5rem;
+    font-weight: 500;
+    color: white;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 3px;
+    background-color: rgb(0, 0, 0);
+    padding: 0 3px;
+    line-height: 10px;
+}
+
+.userPrenom {
+    width: 110%;
+    height: 100%;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.userNom {
+    width: 110%;
+    height: 100%;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.userPourboire {
+    width: 110%;
+    height: 50%;
+}
+
+.userPourboire::after {
+    content: ' chf';
+    left: 90px;
+
+}
+
+.colorPickerDiv {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    transition: transform 0.3s;
+}
+
+.colorPickerDiv:hover {
+    transform: scale(1.4);
+}
+
+.colorPickerDiv input {
+    width: 100%;
+    height: 100%;
+}
+
+.colorPickerDiv:hover::after {
+    position: absolute;
+    top: -35px;
+    left: -57px;
+    width: 180px;
+    content: "Cliquer pour changer de couleur";
+    font-family: sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: white;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 3px;
+    background-color: rgb(0, 0, 0);
+    padding: 3px 3px;
+    line-height: 10px;
+}
+
+
+
+
+
+/* ------------------------------------------------------------------
+MENU CALCULATEUR 
+---------------------------------------------------------------------*/
+
+
+#menuCalcul.disable {
+    display: none;
+}
+
+#menuCalcul {
+    position: absolute;
+    width: 85%;
+    background-color: #1c0829;
+    background-image: linear-gradient(326deg, #362044 0%, #17071f 50%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.37);
+    border-right: 1px solid rgba(255, 255, 255, 0.37);
+    box-shadow: 0 0 15px rgba(180, 180, 180, 0.356);
+    top: -200px;
+    left: 0;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px 10px;
+    transition: transform 0.3s ease-in;
+}
+
+#menuCalcul.moveUp {
+    transform: translateY(-200px)
+}
+
+#menuCalcul.moveDown {
+    transform: translateY(200px);
+}
+
+#menuCalcul form {
+    width: 450px;
+    height: 100%;
+    background: rgba(122, 122, 122, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-right: 10px;
+}
+
+#menuCalcul label {
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+#menuCalcul #menuCalc {
+    background-color: rgb(28, 53, 163);
+    border: 1px solid black;
+    padding: 7px;
+    color: white;
+}
+
+#menuCalcul input {
+    width: 80%;
+    padding: 5px 0;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+#menuCalculContainer {
+    width: 188px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 15px;
+    margin-left: 10%;
+}
+
+#menuCalcul button {
+    cursor: pointer;
+    color: white;
+}
+
+#pourboire {
+    text-align: center;
+    width: 40px;
+}
+
+#menuOptions {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-left: 10%;
+}
+
+#menuOptions button {
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 1px solid black;
+}
+
+
+#menuOptions #menuAppliquer {
+    background-color: #8700d4;
+}
+#menuOptions #menuAnnuler {
+    background-color:  #a70045;
+}
+
+#userSelected {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 3px;
+    padding: 2px;
+}
+
+#userSelected button {
+    font-size: 1rem;
+    margin: 5px;
+    border-radius: 3px;
+    width: 80px;
+    height: 70px;
+    border: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition: scale 0.1s;
+}
+
+#userSelected button:hover {
+    transform: scale(1.1);
+}
+
+#userSelected button .clonedPourboire {
+    font-weight: 600;    
+}
